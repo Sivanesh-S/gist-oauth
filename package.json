@@ -1,0 +1,18 @@
+{
+  "name": "notes-app-react-markdown",
+  "version": "1.0.0",
+  "description": "A note taking app for markdown lovers which has live preview editing like Paper dropbox.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "dropbox",
+    "paper",
+    "notes",
+    "markdown",
+    "react"
+  ],
+  "author": "Sivanesh",
+  "license": "ISC"
+}
