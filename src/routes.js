@@ -8,5 +8,6 @@ module.exports = {
   isGistStarred: gistId => `/gists/${gistId}/star`,
   getForksList: gistId => `/gists/${gistId}/forks`,
   create: '/gists',
-  forkGist: gistId => `/gists/${gistId}/forks`
+  forkGist: gistId => `/gists/${gistId}/forks`,
+  edit: gistId => `/gists/${gistId}`
 };

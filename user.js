@@ -29,7 +29,15 @@ githubAPI.getAuthToken(
     }
 
     gistMethods
-      .forkGist('723c6c1507be4622e1f46126f2a2394d')
+      .edit(
+        '4dd3afe292c281e931636e455e5225f9',
+        {
+          'hello world.js': {
+            content: 'Edited'
+          }
+        },
+        'Content Edited'
+      )
       .then(res => {
         // res.forEach(gist => console.log('gist.id:', gist.id));
         console.log('res:', res);
