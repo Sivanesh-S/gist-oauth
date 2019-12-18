@@ -1,18 +1,23 @@
 {
-  "name": "notes-app-react-markdown",
+  "name": "gist-app",
   "version": "1.0.0",
-  "description": "A note taking app for markdown lovers which has live preview editing like Paper dropbox.",
-  "main": "server.js",
+  "description": "A package that handles OAuth authentication for Github",
+  "main": "index.js",
   "scripts": {
+    "start": "nodemon app",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "dropbox",
-    "paper",
-    "notes",
-    "markdown",
-    "react"
+    "gist",
+    "github",
+    "oauth",
+    "api",
+    "CRUD"
   ],
   "author": "Sivanesh",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "express": "^4.17.1"
+  }
 }
