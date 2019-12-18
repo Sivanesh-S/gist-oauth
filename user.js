@@ -29,7 +29,7 @@ githubAPI.getAuthToken(
     }
 
     gistMethods
-      .getForksList('47368346532f0036963c87354fbe8a22')
+      .forkGist('723c6c1507be4622e1f46126f2a2394d')
       .then(res => {
         // res.forEach(gist => console.log('gist.id:', gist.id));
         console.log('res:', res);

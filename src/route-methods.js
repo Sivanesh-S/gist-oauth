@@ -17,8 +17,22 @@ const withAuthToken = accessToken => {
         return Promise.reject(err);
       }
     } else if (method === 'POST') {
+      try {
+        const response = await axios.post(`${api}${route}`, data, {
+          headers: {
+            Authorization: `token ${accessToken}`
+          }
+        });
+        return Promise.resolve(response.data);
+      } catch (error) {
+        return Promise.reject(error);
+      }
+    } else if (method === 'PATCH') {
+    } else if (method === 'DELETE') {
     }
   };
+
+  // GET Requests
 
   const get = (since = '') => {
     const qs = since ? `since=${since}` : '';
@@ -59,6 +73,20 @@ const withAuthToken = accessToken => {
     return requestAPI(routes.getForksList(id), 'GET');
   };
 
+  // POST requests
+
+  const create = (files, description, public) => {
+    return requestAPI(routes.create, 'POST', {
+      files,
+      description,
+      public
+    });
+  };
+
+  const forkGist = gistId => {
+    return requestAPI(routes.forkGist(gistId), 'POST');
+  };
+
   return {
     get,
     getPublic,
@@ -67,7 +95,9 @@ const withAuthToken = accessToken => {
     getSpecificRevision,
     getCommitsList,
     isGistStarred,
-    getForksList
+    getForksList,
+    create,
+    forkGist
   };
 };
 

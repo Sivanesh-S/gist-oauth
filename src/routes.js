@@ -6,5 +6,7 @@ module.exports = {
   getSpecificRevision: (gistId, sha) => `/gists/${gistId}/${sha}`,
   getCommitsList: gistId => `/gists/${gistId}/commits`,
   isGistStarred: gistId => `/gists/${gistId}/star`,
-  getForksList: gistId => `/gists/${gistId}/forks`
+  getForksList: gistId => `/gists/${gistId}/forks`,
+  create: '/gists',
+  forkGist: gistId => `/gists/${gistId}/forks`
 };
