@@ -38,6 +38,17 @@ const withAuthToken = accessToken => {
       } catch (error) {
         return Promise.reject(error);
       }
+    } else if (method === 'PUT') {
+      try {
+        const response = await axios.put(`${api}${route}`, data, {
+          headers: {
+            Authorization: `token ${accessToken}`
+          }
+        });
+        return Promise.resolve(response.data);
+      } catch (error) {
+        return Promise.reject(error);
+      }
     } else if (method === 'DELETE') {
     }
   };
@@ -101,6 +112,15 @@ const withAuthToken = accessToken => {
     return requestAPI(routes.edit(gistId), 'PATCH', { files, description });
   };
 
+  const starGist = async gistId => {
+    try {
+      const response = await requestAPI(routes.starGist(gistId), 'PUT');
+      return true;
+    } catch (error) {
+      return false;
+    }
+  };
+
   return {
     get,
     getPublic,
@@ -112,7 +132,8 @@ const withAuthToken = accessToken => {
     getForksList,
     create,
     forkGist,
-    edit
+    edit,
+    starGist
   };
 };
 

@@ -9,5 +9,6 @@ module.exports = {
   getForksList: gistId => `/gists/${gistId}/forks`,
   create: '/gists',
   forkGist: gistId => `/gists/${gistId}/forks`,
-  edit: gistId => `/gists/${gistId}`
+  edit: gistId => `/gists/${gistId}`,
+  starGist: gistId => `/gists/${gistId}/star`
 };
