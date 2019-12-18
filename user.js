@@ -29,7 +29,7 @@ githubAPI.getAuthToken(
     }
 
     gistMethods
-      .starGist('4dd3afe292c281e931636e455e5225f9')
+      .deleteGist('4dd3afe292c281e931636e455e5225f9')
       .then(res => {
         // res.forEach(gist => console.log('gist.id:', gist.id));
         console.log('res:', res);

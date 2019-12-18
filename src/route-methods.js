@@ -50,6 +50,16 @@ const withAuthToken = accessToken => {
         return Promise.reject(error);
       }
     } else if (method === 'DELETE') {
+      try {
+        await axios.delete(`${api}${route}`, {
+          headers: {
+            Authorization: `token ${accessToken}`
+          }
+        });
+        return true;
+      } catch (error) {
+        return false;
+      }
     }
   };
 
@@ -121,6 +131,14 @@ const withAuthToken = accessToken => {
     }
   };
 
+  const unStarGist = gistId => {
+    return requestAPI(routes.unStarGist(gistId), 'DELETE');
+  };
+
+  const deleteGist = gistId => {
+    return requestAPI(routes.delete(gistId), 'DELETE');
+  };
+
   return {
     get,
     getPublic,
@@ -133,7 +151,9 @@ const withAuthToken = accessToken => {
     create,
     forkGist,
     edit,
-    starGist
+    starGist,
+    unStarGist,
+    deleteGist
   };
 };
 
