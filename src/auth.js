@@ -59,12 +59,13 @@ module.exports = connect = (
           })
           .catch(error => {
             if (error) {
-              callback(new Error('Issue in Fetching POST'));
+              returnReject('Issue in fetching POST', error);
             }
           });
       } else {
         callback(new Error('Not a Valid Code.'));
       }
+      res.send('DONE');
     });
   });
 };
