@@ -8,6 +8,12 @@ module.exports = connect = (
   { clientId, clientSecret, redirectURL },
   callback
 ) => {
+  if (!app.get) {
+    return Promise.reject(
+      `Error: Send Express's app instance in getAuthToken method.`
+    );
+  }
+
   const errorString = isAllExists(clientId, clientSecret, redirectURL);
   if (errorString) {
     return returnReject(errorString, callback);

@@ -6,3 +6,6 @@
 - How to add Link to send auth route.
 
 - Have your link to Login button as `https://github.com/login/oauth/authorize?client_id=YOUR_CLIENT_ID&scope=gist`
+
+# Possible errors
+- If the process is redirected to `github.com` with `404` then your `client_id` is not correct.
