@@ -65,7 +65,7 @@ const withAuthToken = accessToken => {
 
   // GET Requests
 
-  const get = (since = '') => {
+  const getGists = (since = '') => {
     const qs = since ? `since=${since}` : '';
     return requestAPI(routes.get, 'GET', qs);
   };
@@ -140,7 +140,7 @@ const withAuthToken = accessToken => {
   };
 
   return {
-    get,
+    getGists,
     getPublic,
     getStarred,
     getGist,
