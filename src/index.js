@@ -1,5 +1,3 @@
-const auth = require('./auth');
+const gistMethods = require('./route-methods');
 
-module.exports = {
-  getAuthToken: auth
-};
+module.exports = gistMethods;

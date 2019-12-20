@@ -18,6 +18,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.0",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "github-oauth-express": "^1.0.4"
   }
 }
