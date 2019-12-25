@@ -1,6 +1,6 @@
 {
   "name": "gist-oauth",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A package that provides easy way to call Gist Github's API.",
   "main": "index.js",
   "scripts": {
