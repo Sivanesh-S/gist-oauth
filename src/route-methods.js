@@ -14,7 +14,7 @@ const withAuthToken = accessToken => {
         });
         return Promise.resolve(response.data);
       } catch (err) {
-        return Promise.reject(err);
+        return Promise.reject(err.response.data);
       }
     } else if (method === 'POST') {
       try {
@@ -25,7 +25,7 @@ const withAuthToken = accessToken => {
         });
         return Promise.resolve(response.data);
       } catch (error) {
-        return Promise.reject(error);
+        return Promise.reject(error.response.data);
       }
     } else if (method === 'PATCH') {
       try {
@@ -36,7 +36,7 @@ const withAuthToken = accessToken => {
         });
         return Promise.resolve(response.data);
       } catch (error) {
-        return Promise.reject(error);
+        return Promise.reject(error.response.data);
       }
     } else if (method === 'PUT') {
       try {
@@ -47,7 +47,7 @@ const withAuthToken = accessToken => {
         });
         return Promise.resolve(response.data);
       } catch (error) {
-        return Promise.reject(error);
+        return Promise.reject(error.response.data);
       }
     } else if (method === 'DELETE') {
       try {
@@ -56,9 +56,9 @@ const withAuthToken = accessToken => {
             Authorization: `token ${accessToken}`
           }
         });
-        return true;
+        return Promise.resolve();
       } catch (error) {
-        return false;
+        return Promise.reject(error.response.data);
       }
     }
   };
@@ -122,13 +122,8 @@ const withAuthToken = accessToken => {
     return requestAPI(routes.edit(gistId), 'PATCH', { files, description });
   };
 
-  const starGist = async gistId => {
-    try {
-      const response = await requestAPI(routes.starGist(gistId), 'PUT');
-      return true;
-    } catch (error) {
-      return false;
-    }
+  const starGist = gistId => {
+    return requestAPI(routes.starGist(gistId), 'PUT');
   };
 
   const unStarGist = gistId => {
