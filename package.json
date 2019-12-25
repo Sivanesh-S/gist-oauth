@@ -1,6 +1,6 @@
 {
   "name": "gist-oauth",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A package that provides easy way to call Gist Github's API.",
   "main": "index.js",
   "scripts": {
@@ -23,5 +23,9 @@
   },
   "devDependencies": {
     "github-oauth-express": "^1.0.4"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sivanesh-S/gist-oauth"
   }
 }

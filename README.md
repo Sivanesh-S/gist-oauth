@@ -1,6 +1,6 @@
 # gist-oauth
 
-- A small library (< 5kb _when minimized and gzipped_) through which we can call all Gist APIs provided by [github](https://developer.github.com/v3/gists/).
+- A small library (< 4kb _when minimized and gzipped_) through which we can call all Gist APIs provided by [github](https://developer.github.com/v3/gists/).
 - If it is an **express application**, It is recommended to use with [github-oauth-express](https://npmjs.com/package/github-oauth-express) for OAuth. A small `< 6kb` package. _(A five min simple implementation for getting github Auth token)_
 - Or else you can use your own way of getting OAuth Token from github. _As `authToken` is essential for accessing user specific datas._
 
